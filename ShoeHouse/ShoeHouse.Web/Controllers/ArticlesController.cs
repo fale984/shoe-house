@@ -9,24 +9,27 @@ using System.Web.Http;
 
 namespace ShoeHouse.Web.Controllers
 {
-    public class ArticlesController : ApiController
+    public class ArticlesController : ExtendedResponseController
     {
         public ArticleManager articlesManager = new ArticleManager();
 
-        public IEnumerable<SimpleArticle> Get()
+        public IHttpActionResult Get()
         {
-            return articlesManager.GetArticles();
+            var articles = articlesManager.GetArticles();
+            return Success("articles", articles);
         }
 
-        public SimpleArticle Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return articlesManager.GetArticle(id);
+            var article = articlesManager.GetArticle(id);
+            return Success("article", article);
         }
 
         [Route("services/articles/stores/{id}")]
-        public IEnumerable<SimpleArticle> GetFromStore(int id)
+        public IHttpActionResult GetFromStore(int id)
         {
-            return articlesManager.GetStoreArticles(id);
+            var articles = articlesManager.GetStoreArticles(id);
+            return Success("articles", articles);
         }
     }
 }

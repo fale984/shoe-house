@@ -9,18 +9,20 @@ using System.Web.Http;
 
 namespace ShoeHouse.Web.Controllers
 {
-    public class StoresController : ApiController
+    public class StoresController : ExtendedResponseController
     {
         private StoresManager storesManager = new StoresManager();
 
-        public IEnumerable<SimpleStore> Get()
+        public IHttpActionResult Get()
         {
-            return storesManager.GetStores();
+            var stores = storesManager.GetStores();
+            return Success("stores", stores);
         }
 
-        public SimpleStore Get(int id)
+        public IHttpActionResult Get(int id)
         {
-            return storesManager.GetStore(id);
+            var store = storesManager.GetStore(id);
+            return Success("store", store);
         }
     }
 }
