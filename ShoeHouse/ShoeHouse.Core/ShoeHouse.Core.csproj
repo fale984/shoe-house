@@ -52,6 +52,7 @@
     <Compile Include="Exportables\SimpleArticle.cs" />
     <Compile Include="Exportables\SimpleStore.cs" />
     <Compile Include="Managers\ArticleManager.cs" />
+    <Compile Include="Managers\StoresManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
