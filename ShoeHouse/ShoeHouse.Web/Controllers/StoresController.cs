@@ -1,5 +1,6 @@
 ﻿using ShoeHouse.Core.Exportables;
 using ShoeHouse.Core.Managers;
+using ShoeHouse.Web.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Web.Http;
 
 namespace ShoeHouse.Web.Controllers
 {
+    [BasicAuthentication]
     public class StoresController : ExtendedResponseController
     {
         private StoresManager storesManager = new StoresManager();
