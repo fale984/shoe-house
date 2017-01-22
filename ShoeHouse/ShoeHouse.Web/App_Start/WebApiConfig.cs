@@ -16,7 +16,7 @@ namespace ShoeHouse.Web
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "service/{controller}/{id}",
+                routeTemplate: "services/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
