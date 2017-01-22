@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeHouse.Data", "ShoeHouse
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeHouse.Core", "ShoeHouse.Core\ShoeHouse.Core.csproj", "{C3A6790A-D001-417C-953C-2A2339887022}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoeHouse.Web", "ShoeHouse.Web\ShoeHouse.Web.csproj", "{1199ABD6-DBD9-42BE-B999-12C0B8F838F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C3A6790A-D001-417C-953C-2A2339887022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3A6790A-D001-417C-953C-2A2339887022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3A6790A-D001-417C-953C-2A2339887022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1199ABD6-DBD9-42BE-B999-12C0B8F838F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1199ABD6-DBD9-42BE-B999-12C0B8F838F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1199ABD6-DBD9-42BE-B999-12C0B8F838F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1199ABD6-DBD9-42BE-B999-12C0B8F838F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
