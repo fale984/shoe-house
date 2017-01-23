@@ -1,2 +1,17 @@
 ﻿<h2>ShoeHouse</h2>
 <span>The best shoes for your needs</span>
+
+<div class="store">
+    <div id="storeRow">
+        Store
+        <select id="storeSelect">
+            <option value="">Select</option>
+        </select>
+    </div>
+    <div id="articlesContainer">
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/main")
+}
