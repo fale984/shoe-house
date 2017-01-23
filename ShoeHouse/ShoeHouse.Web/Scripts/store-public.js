@@ -1,4 +1,6 @@
 ﻿function init() {
+    'use strict';
+
     //Site params
     var storesService = '/services/stores/', storeShoesService = '/services/articles/stores/';
     var serviceUser = 'my_user', servicePass = 'my_password';
@@ -87,16 +89,19 @@
             //Insert articles in container
             $articlesContainer.html(articlesHtml);
         } else {
-            onArticlesError
+            onArticlesError();
         }
     }
 
     //Generate html for an article
     function generateArticleTag(article) {
-        var articleHtml = '<div class="article-row">'
-        + '<h5>' + article.name + '</h5>'
-        + '<p>' + article.description + '</p>'
-        + '<span>$' + article.price + '</span>'
+        var articleHtml = '<div class="h5co-entry padding">'
+            + '<div>'
+            + '<span class="fh5co-post-date">' + article.description + '</span>'
+            + '<h2>' + article.name + '</h2>'
+            + '<p>$' + article.price + ' | ' + article.total_in_shelf + ' available</p>'
+            + '</div>'
+            + '</div>';
 
         return articleHtml;
     }

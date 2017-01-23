@@ -18,8 +18,16 @@ namespace ShoeHouse.Web
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                         "~/Scripts/store-public.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/normalize.css",
+            bundles.Add(new ScriptBundle("~/bundles/theme-scripts").Include(
+                        "~/Scripts/libraries/jquery.easing.1.3.js",
+                        "~/Scripts/libraries/bootstrap.min.js",
+                        "~/Scripts/libraries/jquery.waypoints.min.js",
+                        "~/Scripts/libraries/theme.actions.js"));
+
+            bundles.Add(new StyleBundle("~/Content/theme-css").Include(
+                      "~/Content/animate.css",
+                      "~/Content/icomoon.css",
+                      "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
     }
