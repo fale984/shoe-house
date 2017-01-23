@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<ShoeHouse.Data.Article>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Articles";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Articles</h2>
 
 <p>
-    @Html.ActionLink("Create New", "create")
+    @Html.ActionLink("Add article", "create")
 </p>
 <table class="table">
     <tr>
@@ -30,7 +30,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Store.Name)
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
 @foreach (var item in Model) {
