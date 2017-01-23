@@ -168,6 +168,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
+    <Compile Include="Controllers\StoresAdminController.cs" />
     <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\ExtendedResponseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -230,6 +231,11 @@
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\StoresAdmin\Create.cshtml" />
+    <Content Include="Views\StoresAdmin\Delete.cshtml" />
+    <Content Include="Views\StoresAdmin\Details.cshtml" />
+    <Content Include="Views\StoresAdmin\Edit.cshtml" />
+    <Content Include="Views\StoresAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShoeHouse.Core\ShoeHouse.Core.csproj">
