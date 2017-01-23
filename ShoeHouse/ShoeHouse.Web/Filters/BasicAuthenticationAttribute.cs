@@ -26,7 +26,7 @@ namespace ShoeHouse.Web.Filters
             if (actionContext.Request.Headers.Authorization == null)
             {
                 //Authorization header not found, block request
-                actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                throw new CustomHttpException(401);
             }
             else
             {
@@ -46,7 +46,7 @@ namespace ShoeHouse.Web.Filters
                 else
                 {
                     //Invalid user, block request
-                    actionContext.Response = new System.Net.Http.HttpResponseMessage(System.Net.HttpStatusCode.Unauthorized);
+                    throw new CustomHttpException(401);
                 }
             }
         }

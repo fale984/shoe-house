@@ -24,6 +24,12 @@ namespace ShoeHouse.Web.Controllers
         public IHttpActionResult Get(int id)
         {
             var store = storesManager.GetStore(id);
+
+            if (store == null)
+            {
+                throw new CustomHttpException(404);
+            }
+
             return Success("store", store);
         }
     }

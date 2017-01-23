@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 
 namespace ShoeHouse.Web.Controllers
@@ -24,6 +25,12 @@ namespace ShoeHouse.Web.Controllers
         public IHttpActionResult Get(int id)
         {
             var article = articlesManager.GetArticle(id);
+
+            if (article == null)
+            {
+                throw new CustomHttpException(404);
+            }
+
             return Success("article", article);
         }
 
