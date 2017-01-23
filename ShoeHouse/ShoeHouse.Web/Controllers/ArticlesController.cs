@@ -1,6 +1,7 @@
 ﻿using ShoeHouse.Core.Exportables;
 using ShoeHouse.Core.Managers;
 using ShoeHouse.Web.Filters;
+using ShoeHouse.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +17,14 @@ namespace ShoeHouse.Web.Controllers
     {
         public ArticleManager articlesManager = new ArticleManager();
 
-        public IHttpActionResult Get()
+        public ArticlesResponse Get()
         {
             var articles = articlesManager.GetArticles();
-            return Success("articles", articles);
+            //return Success("articles", articles);
+            return new ArticlesResponse(articles);
         }
 
-        public IHttpActionResult Get(int id)
+        public ArticleResponse Get(int id)
         {
             var article = articlesManager.GetArticle(id);
 
@@ -31,14 +33,16 @@ namespace ShoeHouse.Web.Controllers
                 throw new CustomHttpException(404);
             }
 
-            return Success("article", article);
+            //return Success("article", article);
+            return new ArticleResponse(article);
         }
 
         [Route("services/articles/stores/{id}")]
-        public IHttpActionResult GetFromStore(int id)
+        public ArticlesResponse GetFromStore(int id)
         {
             var articles = articlesManager.GetStoreArticles(id);
-            return Success("articles", articles);
+            //return Success("articles", articles);
+            return new ArticlesResponse(articles);
         }
     }
 }
