@@ -173,6 +173,8 @@
     <Compile Include="Controllers\ExtendedResponseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
+    <Compile Include="Filters\CustomHttpException.cs" />
+    <Compile Include="Filters\CustomErrorFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,7 +237,9 @@
     <Content Include="Scripts\libraries\jquery.easing.1.3.js" />
     <Content Include="Scripts\libraries\jquery.waypoints.min.js" />
     <Content Include="Scripts\store-public.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

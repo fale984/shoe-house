@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoeHouse.Web.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -10,6 +11,7 @@ namespace ShoeHouse.Web
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+            GlobalConfiguration.Configuration.Filters.Add(new CustomErrorFilterAttribute());
 
             // Web API routes
             config.MapHttpAttributeRoutes();
