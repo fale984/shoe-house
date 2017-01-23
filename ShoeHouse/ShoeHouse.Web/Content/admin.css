@@ -1,0 +1,30 @@
+﻿body {
+    background-color: rgb(231, 222, 212);
+    color: #997b5f;
+}
+
+a {
+    color: rgb(255, 94, 94);
+}
+
+    a:hover, a:focus, a:visited {
+        color: rgb(206, 71, 71);
+    }
+
+.header {
+}
+
+    .header .menu {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+        .header .menu a {
+            display: inline-block;
+            margin: 10px;
+            font-size: 16px;
+        }
+
+td, th {
+    border: 1px solid !important;
+}
