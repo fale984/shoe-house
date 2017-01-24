@@ -177,6 +177,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticlesAPIModels.cs" />
+    <Compile Include="Models\CustomErrorAPIModels.cs" />
     <Compile Include="Models\StoresAPIModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

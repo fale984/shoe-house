@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShoeHouse.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
@@ -16,29 +17,21 @@ namespace ShoeHouse.Web.Filters
         /// <param name="context"></param>
         public override void OnException(HttpActionExecutedContext context)
         {
-            //By default the response will be server error
-            int error_code = 500;
-            string error_msg = "Server Error";
 
             //If the error was thrown by custom code, the exception can be casted
             var customError = context.Exception as CustomHttpException;
-            if (customError != null)
+            if (customError == null)
             {
-                error_code = customError.ErrorCode;
-                error_msg = customError.Message;
+                //If could not be casted, create a default server error
+                customError = new CustomHttpException(500);
             }
 
             //Convert te exception to custom object
-            var response = new
-            {
-                success = false,
-                error_code,
-                error_msg
-            };
+            var response = new CustomErrorResponse(customError.ErrorCode, customError.Message);
 
             //Return custom object
             var request = context.ActionContext.Request;
-            context.Response = context.Request.CreateResponse((HttpStatusCode)error_code, response);
+            context.Response = context.Request.CreateResponse((HttpStatusCode)customError.ErrorCode, response);
         }
 
     }
