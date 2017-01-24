@@ -131,7 +131,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -170,7 +169,6 @@
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\StoresAdminController.cs" />
     <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
-    <Compile Include="Controllers\ExtendedResponseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Filters\CustomHttpException.cs" />
@@ -178,6 +176,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArticlesAPIModels.cs" />
+    <Compile Include="Models\CustomErrorAPIModels.cs" />
+    <Compile Include="Models\StoresAPIModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

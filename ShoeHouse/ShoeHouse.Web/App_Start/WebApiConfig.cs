@@ -13,6 +13,11 @@ namespace ShoeHouse.Web
             // Web API configuration and services
             GlobalConfiguration.Configuration.Filters.Add(new CustomErrorFilterAttribute());
 
+            //Configure XmlSerializer as default serializer and force xml declaration
+            var xml = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
+            xml.UseXmlSerializer = true;
+            xml.WriterSettings.OmitXmlDeclaration = false;
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
