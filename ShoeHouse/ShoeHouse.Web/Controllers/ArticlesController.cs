@@ -37,9 +37,15 @@ namespace ShoeHouse.Web.Controllers
         /// </summary>
         /// <param name="id">Id to search</param>
         /// <returns>Article if found, or custom error</returns>
-        public ArticleResponse Get(int id)
+        public ArticleResponse Get(int? id)
         {
-            var article = articlesManager.GetArticle(id);
+            //If the id is not integer or is not provided return bad request
+            if (!id.HasValue)
+            {
+                throw new CustomHttpException(400);
+            }
+
+            var article = articlesManager.GetArticle(id.Value);
 
             //If the article does not exists, return custom error
             if (article == null)
@@ -56,9 +62,15 @@ namespace ShoeHouse.Web.Controllers
         /// <param name="id">Id of the store</param>
         /// <returns>Article list</returns>
         [Route("services/articles/stores/{id}")]
-        public ArticlesResponse GetFromStore(int id)
+        public ArticlesResponse GetFromStore(int? id)
         {
-            var articles = articlesManager.GetStoreArticles(id);
+            //If the id is not integer or is not provided return bad request
+            if (!id.HasValue)
+            {
+                throw new CustomHttpException(400);
+            }
+
+            var articles = articlesManager.GetStoreArticles(id.Value);
 
             return new ArticlesResponse(articles);
         }

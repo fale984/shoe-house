@@ -37,11 +37,17 @@ namespace ShoeHouse.Web.Controllers
         /// </summary>
         /// <param name="id">Id to search</param>
         /// <returns>Store if found, or custom error</returns>
-        public StoreResponse Get(int id)
+        public StoreResponse Get(int? id)
         {
-            var store = storesManager.GetStore(id);
+            //If the id is not integer or is not provided return bad request
+            if (!id.HasValue)
+            {
+                throw new CustomHttpException(400);
+            }
 
-            //If the store does not exists, return custom error
+            var store = storesManager.GetStore(id.Value);
+
+            //If the store does not exists, return not found
             if (store == null)
             {
                 throw new CustomHttpException(404);
