@@ -169,7 +169,6 @@
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\StoresAdminController.cs" />
     <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
-    <Compile Include="Controllers\ExtendedResponseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Filters\CustomHttpException.cs" />
