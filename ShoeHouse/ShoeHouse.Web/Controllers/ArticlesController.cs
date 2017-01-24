@@ -47,7 +47,7 @@ namespace ShoeHouse.Web.Controllers
 
             var article = articlesManager.GetArticle(id.Value);
 
-            //If the article does not exists, return custom error
+            //If the article does not exist, return custom error
             if (article == null)
             {
                 throw new CustomHttpException(404);
@@ -71,6 +71,12 @@ namespace ShoeHouse.Web.Controllers
             }
 
             var articles = articlesManager.GetStoreArticles(id.Value);
+
+            //If the store does not exist, return not found message
+            if (articles == null)
+            {
+                throw new CustomHttpException(404);
+            }
 
             return new ArticlesResponse(articles);
         }

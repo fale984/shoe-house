@@ -64,9 +64,15 @@ namespace ShoeHouse.Core.Managers
         /// Get all shoes in the specified store
         /// </summary>
         /// <param name="storeId">Store to search</param>
-        /// <returns>Shoes in store, empty if store does not exist</returns>
+        /// <returns>Shoes in store, null if store does not exist</returns>
         public List<SimpleArticle> GetStoreArticles(int storeId)
         {
+            var storeExists = context.Stores.Any(x => x.Id == storeId);
+            if (!storeExists)
+            {
+                return null;
+            }
+
             var articles = context.Articles
                 .Where(x => x.StoreId == storeId)
                 .Select(x => new SimpleArticle
